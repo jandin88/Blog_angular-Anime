@@ -1,0 +1,29 @@
+
+<app-menu-title></app-menu-title>
+<div class="container__articles">
+
+  <div class="articles_main" *ngFor="let article of articles" >
+
+    <app-big-card
+      *ngIf="article.id === '1'"
+      id="{{article.id}}"
+      photoCover="{{article.photoCover}}"
+      cardTitle="{{article.title}}"
+      cardDescription="{{article.description}}"
+    ></app-big-card>
+  </div>
+
+
+  <div class="articles_others"  >
+    <ng-container *ngFor="let article of articles">
+      <app-small-card
+        *ngIf="article.id !== '1'"
+        id="{{article.id}}"
+        cardTitle="{{article.title}}"
+        photoCover="{{article.photoCover}}">
+      </app-small-card>
+    </ng-container>
+  </div>
+
+
+</div>
